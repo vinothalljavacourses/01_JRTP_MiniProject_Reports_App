@@ -21,6 +21,8 @@ public class DataLoader implements ApplicationRunner{
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
+		
+		repository.deleteAll();
 		// To insert data into database
 		
 		// Cash Plans 
@@ -102,7 +104,7 @@ public class DataLoader implements ApplicationRunner{
 		CitizenPlan cp10=new CitizenPlan();
 		cp10.setCitizenName("Nandini");
 		cp10.setGender("Fe-Male");
-		cp10.setPlanName("Medical");
+		cp10.setPlanName("Employment");
 		cp10.setPlanStatus("Approved");
 		cp10.setPlanStartDate(LocalDate.now());
 		cp10.setPlanEndDate(LocalDate.now().plusMonths(6));
@@ -111,14 +113,14 @@ public class DataLoader implements ApplicationRunner{
 		CitizenPlan cp11=new CitizenPlan();
 		cp11.setCitizenName("Selva");
 		cp11.setGender("Male");
-		cp11.setPlanName("Medical");
+		cp11.setPlanName("Employment");
 		cp11.setPlanStatus("Denied");
 		cp11.setDenialReason("New Job");
 		
 		CitizenPlan cp12=new CitizenPlan();
 		cp12.setCitizenName("Bilal");
 		cp12.setGender("Male");
-		cp12.setPlanName("Medical");
+		cp12.setPlanName("Employment");
 		cp12.setPlanStatus("Terminated");
 		cp12.setTerminatedDate(LocalDate.now());
 		cp12.setTerminationReason("Rental Income");
