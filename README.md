@@ -1,6 +1,6 @@
 # 01_JRTP_MiniProject_Reports_App
 Report Application
-Spring boot with Data JPA, MySQL, PDF Generation, Sending email, Reports generation, JSP and Bootstrap etc.
+Spring boot with Data JPA, MySQL, PDF Generation(In Progress), Sending email(In Progress), Reports generation(In Progress), JSP and Bootstrap etc.
 
 <img width="1792" alt="Report App - Home Page 1" src="https://user-images.githubusercontent.com/128660415/230887441-4a2e8dd8-1fb1-4187-ac6e-1f8fd937ebae.png">
 
