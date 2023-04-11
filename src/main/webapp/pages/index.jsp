@@ -15,7 +15,6 @@
   
     <div class="container">
        <h3 class="pb-3 pt-3" >Report Application!</h3>
-        <p><font color="green">${msg}</font></p>
        <form:form action="searchReport" modelAttribute="searchRequest" method="POST">
         <table>
          <tr>
@@ -89,7 +88,7 @@
          </table>
        
        <hr/>
-       Export : <a href="">Excel</a> <a href="">Pdf</a>
+       Export : <a href="excel" class="btn btn-secondary">Excel</a> <a href="pdf" class="btn btn-secondary">Pdf</a>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
