@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.vinothit.entity.CitizenPlan;
-import com.vinothit.request.SearchRequest;
+import com.vinothit.requestdto.SearchRequestDTO;
 import com.vinothit.service.ReportService;
 
 @Controller
@@ -22,15 +22,17 @@ public class ReportController {
 	private ReportService reportService;
 	
 	@GetMapping("/pdf")
-	public void excelPdf(HttpServletResponse response) throws Exception {	
+	public void excelPdf(HttpServletResponse response, Model model) throws Exception {	
+		
 		response.setContentType("application/pdf");
 		response.addHeader("Content-Disposition", "attachment;filename=plans.pdf");	
-		reportService.exportPdf(response);
+	    reportService.exportPdf(response);
 		
 	}
 	
 	@GetMapping("/excel")
-	public void excelExport(HttpServletResponse response) throws Exception {	
+	public void excelExport(HttpServletResponse response,Model model) throws Exception {	
+		
 		response.setContentType("application/octet-stream");
 		response.addHeader("Content-Disposition", "attachment;filename=plans.xlsx");	
 		reportService.exportExcel(response);
@@ -40,10 +42,7 @@ public class ReportController {
 	@GetMapping("/")
 	public String loadIndexPage(Model model) {
 		
-		System.out.println("ReportController :: getPlanNames() ");	
-	
-		model.addAttribute("searchRequest", new SearchRequest());
-		
+		model.addAttribute("searchRequest", new SearchRequestDTO());		
 		formInitBinding(model);
 		
 		return "index";
@@ -56,19 +55,14 @@ public class ReportController {
 	}
 	
 	@PostMapping("/searchReport")
-	public String searchReport(@ModelAttribute("searchRequest") SearchRequest searchRequest, Model model) {
-		
-		System.out.println("ReportController :: searchReport");
-		System.out.println("searchRequest :: " + searchRequest);
-		System.out.println("model :: " + model);
-		
+	public String searchReport(@ModelAttribute("searchRequest") SearchRequestDTO searchRequest, Model model) {
+				
 		List<CitizenPlan> plans = reportService.search(searchRequest);
 		model.addAttribute("plans", plans);
 		
 		formInitBinding(model);
-		
-		
-		model.addAttribute("msg", "Data successfully saved...");
+			
+		//model.addAttribute("msg", "Data successfully saved...");
 		
 		return "index";
 	}

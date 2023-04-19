@@ -88,6 +88,7 @@
          </table>
        
        <hr/>
+       <p class="text-success"> ${msg}</p>
        Export : <a href="excel" class="btn btn-secondary">Excel</a> <a href="pdf" class="btn btn-secondary">Pdf</a>
     </div>
     

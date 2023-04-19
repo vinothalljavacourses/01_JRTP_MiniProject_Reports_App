@@ -1,4 +1,4 @@
-package com.vinothit.request;
+package com.vinothit.requestdto;
 
 import java.time.LocalDate;
 
@@ -8,7 +8,7 @@ import lombok.Data;
 
 
 @Data
-public class SearchRequest {
+public class SearchRequestDTO {
 	
 	private String planName;
 	private String planStatus;
